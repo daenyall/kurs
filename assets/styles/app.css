@@ -1,2 +1,4 @@
 @import "tailwindcss";
-
+form-control {
+    background-color: #999999;
+}

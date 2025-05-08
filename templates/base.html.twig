@@ -11,19 +11,21 @@
         {% endblock %}
        
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+       
        <script>
         tailwind.config = {
             darkMode: 'class'
         }
        </script>
     </head>
-    <body class="bg-red-200 m-10 dark:bg-gray-800 dark:text-white" >
-        <h1 class="text-3xl font-bold underline">
-            123
-          </h1>
+    <body class="bg-white-50 m-10 dark:bg-gray-800 dark:text-white " >
+        <header class="flex flex-row border border-gray-200 justify-items-start shadow-sm m-10">
+            <button type="button" id="indexRedirect" class="basis-32 border border-zinc-200" onclick="window.location.href ='{{ path('app_micro_post') }}'">index</button>
+            <button type="button" id="indexRedirect" class="basis-32 border border-zinc-200" onclick="window.location.href ='{{ path('app_micro_post_add') }}'">add</button>
+            <button type="button" id="indexRedirect" class="basis-32 border border-zinc-200" onclick="window.location.href ='{{ path('app_micro_post_edit') }}'">edit</button>
+        </header>
           <div>
         {% for message in app.flashes('success') %}
             <div style="color: green;">{{ message }} </div>

@@ -3,25 +3,27 @@
 
     {% block body %}
       {{ form_start(form)}}
+      <div class="flex flex-col mx-auto w-1/2 items-center h-screen">
       <div> {{form_errors(form)}} </div>
 
       <div> 
         {{ form_label(form.title)}}
       </div>
       <div> 
-        {{ form_widget(form.title, {'attr': {'style': 'color: gray'} } ) }}
+        {{ form_widget(form.title, {'attr': {'class': 'bg-gray-100 rounded-md border border-gray-50 shadow-sm'} } ) }}
       </div>
       <div> 
-        {{ form_label(form.text)}}
+        {{ form_label(form.text )}}
       </div>
       <div> 
-        {{ form_widget(form.text)}}
+        {{ form_widget(form.text , {'attr': {'class': 'bg-gray-100 rounded-md border border-gray-50 shadow-sm'} })}}
       </div>
   
 
       <div>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="submit" class=" w-24 m-5 bg-gray-100 rounded-full- shadow-sm border border-gray-300" >Submit</button>
         </div> 
+      </div>
         {{ form_end(form)}}
     {% endblock %}
     

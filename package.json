@@ -23,6 +23,9 @@
   "homepage": "https://github.com/daenyall/kurs#readme",
   "description": "",
   "devDependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "@hotwired/turbo": "^7.1.1 || ^8.0",
+    "@symfony/stimulus-bridge": "^3.2.0 || ^4.0.0",
     "@symfony/webpack-encore": "^5.1.0",
     "sass": "^1.87.0",
     "sass-loader": "^16.0.5"
@@ -30,6 +33,7 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.5",
     "@tailwindcss/postcss": "^4.1.5",
+    "core-js": "^3.42.0",
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
     "tailwindcss": "^4.1.5"
