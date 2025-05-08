@@ -1,18 +1,22 @@
 {% extends 'base.html.twig' %}
 
     {% block body %}
-    <div>
+    <div class="flex flex-col items-center justify-center "> 
         {% if posts|length > 0 %}
-        {% for post in posts %}
-        <div> 
-            <a href = "{{ path('app_show_one' ,  {post: post.id}) }}">
-            {{ post.title }}
-            </a>
+        <div class="flex flex-row flex-wrap justify-center gap-5"> 
+            {% for post in posts %}
+            <div class="basis-64 border border-gray-200 shadow-md flex flex-col items-center justify-center p-4 text-center">
+                <a href="{{ path('app_micro_post_show', {post: post.id}) }}" class="">
+                    {{ post.title }}
+                </a>
+                <button type="button" onclick="window.location.href='{{ path('app_micro_post_edit', {'post': post.id}) }}'" class="mt-2 bg-gray-100 px-3 py-1  rounded">
+                    Edit
+                </button>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    {% else %}
-        
-    {% endif %}
+        {% else %}
+            <p class="text-center text-gray-500">Brak postów do wyświetlenia.</p>
+        {% endif %}
     </div>
     {% endblock %}
-    

@@ -20,17 +20,16 @@
         }
        </script>
     </head>
-    <body class="bg-white-50 m-10 dark:bg-gray-800 dark:text-white " >
-        <header class="flex flex-row border border-gray-200 justify-items-start shadow-sm m-10">
-            <button type="button" id="indexRedirect" class="basis-32 border border-zinc-200" onclick="window.location.href ='{{ path('app_micro_post') }}'">index</button>
-            <button type="button" id="indexRedirect" class="basis-32 border border-zinc-200" onclick="window.location.href ='{{ path('app_micro_post_add') }}'">add</button>
-            <button type="button" id="indexRedirect" class="basis-32 border border-zinc-200" onclick="window.location.href ='{{ path('app_micro_post_edit') }}'">edit</button>
+    <body class="bg-grey-50 m-10 dark:bg-gray-800 dark:text-white " >
+        <header class="flex flex-row border border-gray-200 justify-center itmes-center shadow-sm m-10">
+            <button type="button" id="indexRedirect" class="bg-gray-100 basis-32 border border-zinc-200 hover: bg-gray-200" onclick="window.location.href ='{{ path('app_micro_post') }}'">index</button>
+            <button type="button" id="indexRedirect" class="bg-gray-100 basis-32 border border-zinc-200 hover: bg-gray-200" onclick="window.location.href ='{{ path('app_micro_post_add') }}'">add</button>
         </header>
           <div>
         {% for message in app.flashes('success') %}
             <div style="color: green;">{{ message }} </div>
         {% endfor %}
         {% block body %}
-          <div>123</div>{% endblock %}
+        {% endblock %}
     </body>
 </html>
