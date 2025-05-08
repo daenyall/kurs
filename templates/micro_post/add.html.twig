@@ -1,6 +1,26 @@
 {% extends 'base.html.twig' %}
 {% block title %} Create New Post{% endblock %}
+  {% form_theme form 'bootstrap_5_layout.html.twig' %}
     {% block body %}
-      {{form(form)}}
+      {{ form_start(form)}}
+      <div> {{form_errors(form)}} </div>
+
+      <div> 
+        {{ form_label(form.title)}}
+      </div>
+      <div> 
+        {{ form_widget(form.title, {'attr': {'style': 'color: gray'} } ) }}
+      </div>
+      <div> 
+        {{ form_label(form.text)}}
+      </div>
+      <div> 
+        {{ form_widget(form.text)}}
+      </div>
+      {{ form_end(form)}}
+
+      <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     {% endblock %}
     

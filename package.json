@@ -1,0 +1,31 @@
+{
+  "name": "kurs",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daenyall/kurs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daenyall/kurs/issues"
+  },
+  "homepage": "https://github.com/daenyall/kurs#readme",
+  "description": "",
+  "devDependencies": {
+    "@symfony/webpack-encore": "^5.1.0",
+    "bootstrap": "^5.3.6",
+    "sass": "^1.87.0",
+    "sass-loader": "^16.0.5"
+  }
+}

@@ -29,31 +29,31 @@ final class MicroPostController extends AbstractController
         return $this->render('micro_post/show.html.twig', [
             'post' => $post,
         ]);
-    } 
-    #[Route('/micro-post/add', name:'app_micro_post_add', priority: 2 )]
+    }
+    #[Route('/micro-post/add', name: 'app_micro_post_add', priority: 2)]
     public function add(Request $request, MicroPostRepository $posts): Response
     {
         $microPost = new MicroPost();
         $form = $this->createFormBuilder($microPost)
-        ->add ('title', TextType::class)
-        ->add('text', TextType::class)
-        ->add('submit', SubmitType::class, ['label' => 'Save'])
-        ->getForm();
+            ->add('title', TextType::class)
+            ->add('text', TextType::class)
+            
+            ->getForm();
 
         $form->handleRequest($request);
-        if( $form->isSubmitted() && $form->isValid() ) 
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $post = $form->getData();
             $post->setCreated(new \DateTime());
             $posts->add($post, true);
-            dd($post);
-            // add a flash msg 
-            // redirect
+
+
+            $this->addFlash('success', 'Post has been added');
+            return $this->redirectToRoute('app_micro_post');
         }
         return $this->render(
             'micro_post/add.html.twig',
             [
-                'form'=> $form,
+                'form' => $form,
             ]
         );
     }
