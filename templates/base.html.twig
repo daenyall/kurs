@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="dark">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -15,15 +15,16 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
        <script>
-        tailwind.config {
+        tailwind.config = {
             darkMode: 'class'
         }
        </script>
     </head>
-    <body>
+    <body class="bg-red-200 m-10 dark:bg-gray-800 dark:text-white" >
         <h1 class="text-3xl font-bold underline">
             123
           </h1>
+          <div>
         {% for message in app.flashes('success') %}
             <div style="color: green;">{{ message }} </div>
         {% endfor %}

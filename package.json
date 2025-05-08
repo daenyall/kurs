@@ -24,7 +24,6 @@
   "description": "",
   "devDependencies": {
     "@symfony/webpack-encore": "^5.1.0",
-    "bootstrap": "^5.3.6",
     "sass": "^1.87.0",
     "sass-loader": "^16.0.5"
   },
