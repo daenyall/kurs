@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %} Create New Post{% endblock %}
-  {% form_theme form 'bootstrap_5_layout.html.twig' %}
+
     {% block body %}
       {{ form_start(form)}}
       <div> {{form_errors(form)}} </div>
@@ -17,10 +17,11 @@
       <div> 
         {{ form_widget(form.text)}}
       </div>
-      {{ form_end(form)}}
+  
 
       <div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+        <button type="submit" id="submit">Submit</button>
+        </div> 
+        {{ form_end(form)}}
     {% endblock %}
     
